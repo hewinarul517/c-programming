@@ -1,0 +1,31 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+struct Train {
+    int train_number;
+    char name[50];
+    char source[50];
+    char destination[50];
+    float fare;
+    int available_seats;
+};
+
+struct Passenger {
+    int booking_id;
+    char name[50];
+    int age;
+    char gender;
+    int train_number;
+    int seat_number;
+};
+void add_train();
+void view_trains();
+void book_ticket();
+void view_bookings();
+void search_ticket();
+void cancel_ticket();
+void login(); 
+
+int main() {
+    return 0;
+}

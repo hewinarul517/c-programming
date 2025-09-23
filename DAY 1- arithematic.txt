@@ -1,0 +1,9 @@
+#include <stdio.h>
+   void main ()
+   {
+       int a=2,b=4,c=6;
+       printf("%d\n",a+b
+);
+       printf("%d\n",b-c);
+       printf("%d\n",c*a);
+   }
