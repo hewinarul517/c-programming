@@ -1,0 +1,34 @@
+#include <stdio.h>
+int main() {
+    int choice;
+    printf("Enter your choice of shape:\n");
+    printf("1. Square\n");
+    printf("2. Triangle\n");
+    printf("3. Circle\n");
+    printf("Enter choice (1-3): ");
+    scanf("%d", &choice);
+    switch (choice) {
+        case 1:
+            printf("\nDrawing a Square:\n");
+            printf("****\n");
+            printf("****\n");
+            printf("****\n");
+            break;
+        case 2:
+            printf("\nDrawing a Triangle:\n");
+            printf("  *\n");
+            printf(" ***\n");
+            printf("*****\n");
+            break;
+        case 3:
+            printf("\nDrawing a Circle:\n");
+            printf("  **\n");
+            printf(" *  *\n");
+            printf("  **\n");
+            break;
+        default:
+            printf("\nInvalid choice. Please enter a number between 1 and 3.\n");
+            break;
+    }
+    return 0;
+}
