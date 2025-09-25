@@ -1,0 +1,52 @@
+#include <stdio.h>
+
+int main() {
+    int depth, rows, cols;
+    printf("Enter the depth of the 3D arrays: ");
+    scanf("%d", &depth);
+    printf("Enter the number of rows: ");
+    scanf("%d", &rows);
+    printf("Enter the number of columns: ");
+    scanf("%d", &cols);
+    int array1[depth][rows][cols];
+    int array2[depth][rows][cols];
+    int sumArray[depth][rows][cols];
+    printf("\nEnter elements for the first 3D array:\n");
+    for (int i = 0; i < depth; i++) {
+        for (int j = 0; j < rows; j++) {
+            for (int k = 0; k < cols; k++) {
+                printf("Enter element array1[%d][%d][%d]: ", i, j, k);
+                scanf("%d", &array1[i][j][k]);
+            }
+        }
+    }
+    printf("\nEnter elements for the second 3D array:\n");
+    for (int i = 0; i < depth; i++) {
+        for (int j = 0; j < rows; j++) {
+            for (int k = 0; k < cols; k++) {
+                printf("Enter element array2[%d][%d][%d]: ", i, j, k);
+                scanf("%d", &array2[i][j][k]);
+            }
+        }
+    }
+    for (int i = 0; i < depth; i++) {
+        for (int j = 0; j < rows; j++) {
+            for (int k = 0; k < cols; k++) {
+                sumArray[i][j][k] = array1[i][j][k] + array2[i][j][k];
+            }
+        }
+    }
+    printf("\nSum of the two 3D arrays:\n");
+    for (int i = 0; i < depth; i++) {
+        printf("--- Layer %d ---\n", i);
+        for (int j = 0; j < rows; j++) {
+            for (int k = 0; k < cols; k++) {
+                printf("%4d ", sumArray[i][j][k]); // %4d for formatting
+            }
+            printf("\n");
+        }
+        printf("\n");
+    }
+
+    return 0;
+}
