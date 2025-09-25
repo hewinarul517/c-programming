@@ -1,0 +1,38 @@
+#include <stdio.h>
+#define D1 2 
+#define D2 2 
+#define D3 2 
+
+int main() {
+    int array1[D1][D2][D3] = {
+        {{1, 2}, {3, 4}},
+        {{5, 6}, {7, 8}}
+    };
+
+    int array2[D1][D2][D3] = {
+        {{9, 8}, {7, 6}},
+        {{5, 4}, {3, 2}}
+    };
+
+    int result[D1][D2][D3];
+    for (int i = 0; i < D1; i++) {
+        for (int j = 0; j < D2; j++) {
+            for (int k = 0; k < D3; k++) {
+                result[i][j][k] = array1[i][j][k] * array2[i][j][k];
+            }
+        }
+    }
+    printf("Result of 3D Array Multiplication (element-wise):\n");
+    for (int i = 0; i < D1; i++) {
+        printf("Block %d:\n", i);
+        for (int j = 0; j < D2; j++) {
+            for (int k = 0; k < D3; k++) {
+                printf("%d ", result[i][j][k]);
+            }
+            printf("\n");
+        }
+        printf("\n");
+    }
+
+    return 0;
+}
