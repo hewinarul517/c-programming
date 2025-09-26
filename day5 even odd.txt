@@ -1,0 +1,17 @@
+#include <stdio.h>
+int main() {
+    int i, limit, even_sum = 0, odd_sum = 0;
+    printf("Enter the upper limit (N): ");
+    scanf("%d", &limit);
+    for (i = 1; i <= limit; i++) {
+        if (i % 2 == 0) {
+            even_sum = even_sum + i; 
+        } else {
+            odd_sum = odd_sum + i;
+        }
+    }
+    printf("Sum of even numbers up to %d = %d\n", limit, even_sum);
+    printf("Sum of odd numbers up to %d = %d\n", limit, odd_sum);
+
+    return 0; 
+}

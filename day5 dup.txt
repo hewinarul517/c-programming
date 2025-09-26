@@ -1,0 +1,48 @@
+#include <stdio.h>
+int removeDuplicatesUnsorted(int arr[], int n) {
+    if (n == 0 || n == 1) {
+        return n;
+    }
+
+    int temp[n];
+    int j = 0;
+
+    for (int i = 0; i < n; i++) {
+        int isDuplicate = 0;
+        for (int k = 0; k < j; k++) {
+            if (arr[i] == temp[k]) {
+                isDuplicate = 1;
+                break;
+            }
+        }
+        if (!isDuplicate) {
+            temp[j++] = arr[i];
+        }
+    }
+    for (int i = 0; i < j; i++) {
+        arr[i] = temp[i];
+    }
+
+    return j;
+}
+
+int main() {
+    int arr[] = {10, 20, 20, 30, 40, 40, 40, 50, 50, 10};
+    int n = sizeof(arr) / sizeof(arr[0]);
+
+    printf("Original array: ");
+    for (int i = 0; i < n; i++) {
+        printf("%d ", arr[i]);
+    }
+    printf("\n");
+
+    n = removeDuplicatesUnsorted(arr, n);
+
+    printf("Array after removing duplicates: ");
+    for (int i = 0; i < n; i++) {
+        printf("%d ", arr[i]);
+    }
+    printf("\n");
+
+    return 0;
+}
