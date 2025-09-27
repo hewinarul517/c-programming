@@ -1,0 +1,25 @@
+#include <stdio.h>
+#include <string.h>
+
+void removeSpaces(char *str) {
+    int count = 0;     for (int i = 0; str[i] != '\0'; i++) {
+        if (str[i] != ' ') {
+            str[count++] = str[i];         }
+    }
+    str[count] = '\0'; }
+
+int main() {
+    char str[] = "Hello World This is a Test";
+    printf("Original string: \"%s\"\n", str);
+
+    removeSpaces(str);
+    printf("String after removing spaces: \"%s\"\n", str);
+
+    char anotherStr[] = "   Leading and trailing spaces   ";
+    printf("Original string: \"%s\"\n", anotherStr);
+
+    removeSpaces(anotherStr);
+    printf("String after removing spaces: \"%s\"\n", anotherStr);
+
+    return 0;
+}
